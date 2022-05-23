@@ -7,16 +7,16 @@ Created on Fri May 20 23:57:05 2022
 from numpy import complex, array
 from PIL import Image
 import colorsys
-width_of_the_set = 1000
+width_of_the_set = 4000
 
 def color(i):
-    color_of_the_set = 255 * array(colorsys.hsv_to_rgb(i / 245.0, 0.9, 0.4))
+    color_of_the_set = 255 * array(colorsys.hsv_to_rgb(i / 245.0, 0.95, 1))
     return tuple(color_of_the_set.astype(int))
 
 def mandelbrot_set(x, y):
     c1 = complex(x, y)
     c2 = 0
-    for n in range(1, 900):
+    for n in range(1, 200):
         if abs(c2) > 2:
             return color(n)
         c2 = c2 * c2 + c1
